@@ -1,13 +1,71 @@
-.App {
-  @include grid();
-  background-color: $default-bg-color;
+// .App {
+//   @include grid();
+//   background-color: $default-bg-color;
 
-  .App-header {
-    @include grid-col(6);
-  }
+//   .App-header {
+//     @include grid-col(6);
+//   }
 
-  .App-intro {
-    color: $default-text-color;
-    @include grid-col(6);
-  }
+//   .App-intro {
+//     color: $default-text-color;
+//     @include grid-col(6);
+//   }
+// }
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.unlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 48px 0;
+  background-color: grey;
+}
+
+.menu__link {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.menu__link--active {
+  color: lightgoldenrodyellow;
+}
+
+.page {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 48px 0;
+}
+
+//routes animation
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 150ms linear;
 }
